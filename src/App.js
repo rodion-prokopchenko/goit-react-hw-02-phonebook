@@ -38,12 +38,23 @@ class App extends Component {
     }));
   };
 
+  compairContacts = (e) => {
+    let contacts = this.state.contacts;
+    if (contacts.some(({ name }) => name === e)) {
+      return true;
+    }
+  };
+
   addContact = (name, number) => {
     const newContact = {
       id: shortid.generate(),
       name: name,
       number: number,
     };
+    if (this.compairContacts(newContact.name)) {
+      return alert(`${newContact.name} is already in contacts`);
+    }
+
     this.setState(({ contacts }) => ({
       contacts: [newContact, ...contacts],
     }));

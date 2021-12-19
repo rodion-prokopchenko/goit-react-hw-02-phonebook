@@ -32,7 +32,18 @@ export default class ContactForm extends Component {
 
   onSumbitButton = (e) => {
     e.preventDefault();
-
+    if (this.state.name === "" && this.state.number === "") {
+      alert("Введите имя и номер");
+      return;
+    }
+    if (this.state.name === "") {
+      alert("Введите имя");
+      return;
+    }
+    if (this.state.number === "") {
+      alert("Введите номер");
+      return;
+    }
     this.props.addContact(this.state.name, this.state.number);
     this.onClearNameInput();
     this.onClearNumberInput();
@@ -41,14 +52,7 @@ export default class ContactForm extends Component {
   render() {
     return (
       <>
-        <form
-          onClick={(e) => {
-            if (e.target.nodeName !== "BUTTON") {
-              console.log(`Мимо ${e.target.nodeName}`);
-              return;
-            }
-          }}
-        >
+        <form>
           <label htmlFor={"nameInput"}>Name</label>{" "}
           <input
             id="nameInput"
