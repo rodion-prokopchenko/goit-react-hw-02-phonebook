@@ -6,13 +6,18 @@ export default class ContactList extends Component {
   render() {
     return (
       <>
-        <h2>Contacts</h2>
         <ul>
           {this.props.contacts.map((contacts) => (
-            <li key={shortid.generate()}>{contacts.name}</li>
+            <li key={shortid.generate()}>
+              {contacts.name}: {contacts.number}
+            </li>
           ))}
         </ul>
       </>
     );
   }
 }
+
+ContactList.propTypes = {
+  contacts: propTypes.array.isRequired,
+};
