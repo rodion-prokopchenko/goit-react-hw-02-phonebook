@@ -2,7 +2,7 @@ import react, { Component } from "react";
 import propTypes from "prop-types";
 import shortid from "shortid";
 
-class Contacts extends Component {
+export default class ContactList extends Component {
   render() {
     return (
       <>
@@ -16,4 +16,3 @@ class Contacts extends Component {
     );
   }
 }
-export default Contacts;
