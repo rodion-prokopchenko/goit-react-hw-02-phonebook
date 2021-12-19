@@ -25,9 +25,7 @@ export default class ContactForm extends Component {
   };
   onSumbitButton = (e) => {
     e.preventDefault();
-    // console.log("нажал");
-    // console.log(this.state.name);
-    // console.log(this.state.number);
+
     this.props.addContact(this.state.name, this.state.number);
     // this.ref.nameInput.value = "";
   };
