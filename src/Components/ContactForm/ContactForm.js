@@ -44,6 +44,9 @@ export default class ContactForm extends Component {
       alert("Введите номер");
       return;
     }
+    if (this.props.compairContacts(this.state.name)) {
+      return alert(`${this.state.name} is already in contacts`);
+    }
     this.props.addContact(this.state.name, this.state.number);
     this.onClearNameInput();
     this.onClearNumberInput();

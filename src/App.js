@@ -42,9 +42,6 @@ class App extends Component {
       name: name,
       number: number,
     };
-    if (this.compairContacts(newContact.name)) {
-      return alert(`${newContact.name} is already in contacts`);
-    }
 
     this.setState(({ contacts }) => ({
       contacts: [newContact, ...contacts],
@@ -65,9 +62,12 @@ class App extends Component {
     const filtreredContacts = this.findByName();
     return (
       <div className="App">
-        <ContactForm addContact={this.addContact} />
+        <ContactForm
+          addContact={this.addContact}
+          compairContacts={this.compairContacts}
+        />
         <h2>Contacts</h2>
-        <Filter onChange={this.changeFilter} onFind={this.findByName} />
+        <Filter onChange={this.changeFilter} />
         <ContactList
           contacts={contacts}
           deleteContact={this.deleteContact}
