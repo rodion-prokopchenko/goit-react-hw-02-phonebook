@@ -7,7 +7,7 @@ export default class ContactList extends Component {
     return (
       <>
         <ul>
-          {this.props.contacts.map((contacts) => (
+          {this.props.filtreredContacts.map((contacts) => (
             <li
               key={shortid.generate()}
               id={contacts.id}

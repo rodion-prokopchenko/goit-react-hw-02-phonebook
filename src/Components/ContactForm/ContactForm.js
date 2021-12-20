@@ -53,7 +53,7 @@ export default class ContactForm extends Component {
     return (
       <>
         <form>
-          <label htmlFor={"nameInput"}>Name</label>{" "}
+          <label htmlFor={"nameInput"}>Name</label>
           <input
             id="nameInput"
             type="text"

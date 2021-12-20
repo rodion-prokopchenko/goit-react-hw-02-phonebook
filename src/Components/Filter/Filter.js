@@ -3,13 +3,8 @@ import propTypes from "prop-types";
 import shortid from "shortid";
 
 export default class Filter extends Component {
-  state = {
-    filterWords: "",
-  };
-
-  onFilterWordsChange = (w) => {
-    this.setState({ filterWords: w.currentTarget.value });
-    console.log(this.state.filterWords);
+  onFilterWordsChange = (e) => {
+    this.props.onChange(e);
   };
 
   render() {
@@ -23,6 +18,7 @@ export default class Filter extends Component {
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
+            // value={this.props.value}
             onInput={this.onFilterWordsChange}
             key={shortid.generate()}
           ></input>
@@ -32,7 +28,7 @@ export default class Filter extends Component {
   }
 }
 
-Filter.propTypes = {};
+// Filter.propTypes = {};
 
 // const Filter = ({ value, onChange }) => (
 //   <form>
