@@ -1,4 +1,4 @@
-import "./App.css";
+import s from "./App.module.css";
 import ContactForm from "./Components/ContactForm/ContactForm";
 import Filter from "./Components/Filter/Filter";
 import ContactList from "./Components/ContactList/ContactList";
@@ -60,7 +60,7 @@ class App extends Component {
     const { contacts, filter } = this.state;
     const filtreredContacts = this.findByName();
     return (
-      <div className="App">
+      <div className={s.app}>
         <ContactForm
           addContact={this.addContact}
           compairContacts={this.compairContacts}

@@ -1,6 +1,7 @@
 import react, { Component } from "react";
 import propTypes from "prop-types";
 import shortid from "shortid";
+import s from "./ContactForm.module.css";
 
 export default class ContactForm extends Component {
   constructor(props) {
@@ -54,9 +55,12 @@ export default class ContactForm extends Component {
   render() {
     return (
       <>
-        <form>
-          <label htmlFor={"nameInput"}>Name</label>
+        <form className={s.form}>
+          <label htmlFor={"nameInput"} className={s.form__item}>
+            Name
+          </label>
           <input
+            className={s.form__item}
             id="nameInput"
             type="text"
             name="name"
@@ -66,8 +70,11 @@ export default class ContactForm extends Component {
             ref={this.nameInput}
             onInput={this.onNameChange}
           />
-          <label htmlFor={"numberInput"}>Number</label>
+          <label htmlFor={"numberInput"} className={s.form__item}>
+            Number
+          </label>
           <input
+            className={s.form__item}
             id="numberInput"
             type="tel"
             name="number"

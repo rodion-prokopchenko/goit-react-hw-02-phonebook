@@ -1,14 +1,16 @@
 import react, { Component } from "react";
 import propTypes from "prop-types";
 import shortid from "shortid";
+import s from "./ContactList.module.css";
 
 export default class ContactList extends Component {
   render() {
     return (
       <>
-        <ul>
+        <ul className={s.contactList}>
           {this.props.filtreredContacts.map((contacts) => (
             <li
+              className={s.contactList__item}
               key={shortid.generate()}
               id={contacts.id}
               onClick={(e) => {
@@ -20,7 +22,9 @@ export default class ContactList extends Component {
               }}
             >
               {contacts.name}: {contacts.number}
-              <button type="button">Delete</button>
+              <button type="button" className={s.contactList__button}>
+                Delete
+              </button>
             </li>
           ))}
         </ul>
