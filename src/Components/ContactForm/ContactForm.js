@@ -9,7 +9,6 @@ export default class ContactForm extends Component {
     this.numberInput = react.createRef();
   }
   state = {
-    id: shortid.generate(),
     name: "",
     number: "",
   };
@@ -86,6 +85,7 @@ export default class ContactForm extends Component {
     );
   }
 }
-// Divs.propTypes = {
-//   : propTypes.string.isRequired,
-// };
+ContactForm.propTypes = {
+  name: propTypes.string,
+  number: propTypes.number,
+};

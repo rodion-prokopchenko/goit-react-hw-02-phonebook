@@ -18,7 +18,6 @@ class App extends Component {
 
   changeFilter = (e) => {
     this.setState({ filter: e.currentTarget.value });
-    console.log(this.state.filter);
   };
 
   deleteContact = (contactId) => {

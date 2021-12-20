@@ -11,4 +11,8 @@ const Filter = ({ value, onChange }) => (
   </form>
 );
 
+Filter.propTypes = {
+  value: propTypes.string,
+};
+
 export default Filter;
